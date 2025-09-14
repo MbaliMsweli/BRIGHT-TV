@@ -1,0 +1,34 @@
+SELECT*FROM BRIGHT_TV.CUSTOMERS.USER_PROFILE;
+
+SELECT* FROM BRIGHT_TV2.VIEWERSHIP.VIEWERSHIP_DATA;
+
+----Create CTEs and join tables
+
+WITH customer_profile as (
+SELECT USERID,
+        GENDER, 
+        RACE,
+        AGE,
+        PROVINCE 
+FROM BRIGHT_TV.CUSTOMERS.USER_PROFILE
+), 
+
+viewers as (
+SELECT USERID,
+        CHANNEL2 as TV_Channel,
+        RECORDDATE2 AS Watch_date,
+        DURATION2 AS Watch_time
+FROM BRIGHT_TV2.VIEWERSHIP.VIEWERSHIP_DATA
+)
+SELECT COALESCE(A.USERID, B.USERID) AS USERID,
+        GENDER, 
+        RACE,
+        AGE,
+        PROVINCE,
+        TV_Channel,
+        Watch_date,
+        Watch_time
+ FROM CUSTOMER_PROFILE AS A
+ LEFT JOIN VIEWERS AS B
+ ON A.USERID = B.USERID;
+        

@@ -1,5 +1,5 @@
 # Bright TV Audience Analysis
-##Introduction
+## Introduction
 
 Bright TV recently launched a new data initiative aimed at understanding viewer behavior, audience engagement, and content performance. As part of this initiative, I conducted a comprehensive analysis of the Bright TV audience dataset to uncover insights into viewership trends, popular channels, audience demographics, and peak viewing times.
 
